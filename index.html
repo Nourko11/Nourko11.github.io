@@ -1,0 +1,295 @@
+                  <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nour Bakoura | Music Business Professional</title>
+    <!-- Chosen Palette: Calm Harmony (Light Slate, Dark Slate Text, Cyan Accent) -->
+    <!-- Application Structure Plan: A single-page portfolio design with a sticky navigation for non-linear exploration. Key sections include an interactive timeline for 'Experience' (clickable to reveal details) and visualized 'Skills' using Chart.js bar charts for clarity and engagement. This structure transforms the static CV into an explorable professional story, which is more user-friendly than a linear document. -->
+    <!-- Visualization & Content Choices: Summary -> Stat cards for key numbers (15+ years). Experience -> Goal: Show progression -> Method: Interactive vertical timeline (HTML/CSS/JS) -> Interaction: Click to expand details. Skills -> Goal: Organize/Visualize -> Method: 3 horizontal bar charts via Chart.js -> Interaction: Hover tooltips. This avoids a wall of text and makes skills easily scannable. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-800">
+                Nour Bakoura
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#summary" class="text-slate-600 hover:text-cyan-600 transition-colors">Summary</a>
+                <a href="#experience" class="text-slate-600 hover:text-cyan-600 transition-colors">Experience</a>
+                <a href="#skills" class="text-slate-600 hover:text-cyan-600 transition-colors">Skills</a>
+                <a href="#education" class="text-slate-600 hover:text-cyan-600 transition-colors">Education</a>
+            </div>
+            <a href="mailto:andenourb@gmail.com" class="hidden md:inline-block bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700 transition-colors">Contact Me</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-16">
+            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 leading-tight">Music Business Professional</h1>
+            <p class="mt-4 text-xl text-slate-600 max-w-3xl mx-auto">Specializing in the secondary ticket market, with a passion for driving growth and navigating the live entertainment landscape.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="mailto:andenourb@gmail.com" class="bg-cyan-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-cyan-700 transition-transform hover:scale-105">Email Me</a>
+                <a href="https://www.linkedin.com/in/nour-bakoura-9b6b57217" class="bg-slate-200 text-slate-800 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-slate-300 transition-transform hover:scale-105">LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <!-- Professional Summary -->
+        <section id="summary" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900">Professional Summary</h2>
+                <p class="mt-2 text-lg text-slate-500">A blend of hands-on experience and academic excellence.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2 bg-white p-8 rounded-xl shadow-md">
+                    <p class="text-slate-700 leading-relaxed">
+                        Highly accomplished and results-driven Music Business Professional with over **15 years of unparalleled expertise in secondary market ticket sales**. Proven ability in strategic ticket sourcing, dynamic pricing, and maximizing revenue across diverse live entertainment sectors. My hands-on commercial acumen is powerfully complemented by a First-Class Honours degree in Music Business, providing a robust foundation in marketing, publishing, copyright, and licensing. Passionate about identifying market opportunities and leveraging deep industry knowledge to drive significant growth and successful market entry strategies, particularly within the dynamic UK and European entertainment landscape.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <div class="text-5xl font-bold text-cyan-600">15+</div>
+                        <div class="mt-2 text-slate-600">Years of Experience</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <div class="text-3xl font-bold text-cyan-600">First-Class</div>
+                        <div class="mt-2 text-slate-600">Honours Degree</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900">Experience</h2>
+                <p class="mt-2 text-lg text-slate-500">A timeline of my professional journey. Click each role for details.</p>
+            </div>
+
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-slate-200"></div>
+
+                <!-- Timeline Item 1 -->
+                <div class="relative mb-8 timeline-item">
+                    <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-4 h-4 bg-cyan-600 rounded-full border-4 border-white"></div>
+                    <div class="ml-auto md:ml-0 md:w-1/2 md:pr-8 text-right md:text-left">
+                        <div class="bg-white p-6 rounded-xl shadow-md cursor-pointer" onclick="toggleDetails('details-1')">
+                            <p class="font-bold text-lg text-slate-800">Secondary Market Ticket Sales Expert</p>
+                            <p class="text-sm text-slate-500">Independent Consultant | Nov 2020 – Present</p>
+                            <div id="details-1" class="hidden mt-4 text-left text-sm text-slate-600 space-y-2">
+                                <p>• Spearheaded and managed comprehensive ticket sourcing strategies across a 15-year career.</p>
+                                <p>• Implemented dynamic pricing models to optimize sales velocity and profit margins.</p>
+                                <p>• Cultivated an extensive network of industry contacts and suppliers.</p>
+                                <p>• Analyzed market trends and consumer demand to forecast sales and identify opportunities.</p>
+                                <p>• Provided strategic consultation on music publishing, copyright, and licensing.</p>
+                                <p>• Developed and executed targeted artist and event marketing strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative mb-8 timeline-item">
+                    <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-4 h-4 bg-cyan-600 rounded-full border-4 border-white"></div>
+                    <div class="md:w-1/2 md:ml-auto md:pl-8 text-left">
+                        <div class="bg-white p-6 rounded-xl shadow-md cursor-pointer" onclick="toggleDetails('details-2')">
+                            <p class="font-bold text-lg text-slate-800">Customer Service & Guest Relations</p>
+                            <p class="text-sm text-slate-500">Sheraton Hotels & Resorts | Oct 2015 – Jan 2018</p>
+                            <div id="details-2" class="hidden mt-4 text-left text-sm text-slate-600 space-y-2">
+                                <p>• Provided exceptional customer service in a luxury hotel environment.</p>
+                                <p>• Managed reservations, check-ins/outs, and guest inquiries with accuracy and efficiency.</p>
+                                <p>• Demonstrated strong problem-solving skills and a proactive approach to guest satisfaction.</p>
+                                <p>• Collaborated effectively within a diverse team to foster a positive operational environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900">Core Competencies</h2>
+                <p class="mt-2 text-lg text-slate-500">A visual overview of my professional skills.</p>
+            </div>
+            <div class="grid lg:grid-cols-1 gap-12">
+                <div>
+                    <h3 class="font-bold text-xl text-center mb-4 text-slate-700">Ticketing & Sales</h3>
+                    <div class="chart-container">
+                        <canvas id="salesSkillsChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-center mb-4 text-slate-700">Music Business</h3>
+                    <div class="chart-container">
+                        <canvas id="musicSkillsChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-center mb-4 text-slate-700">Business & Interpersonal</h3>
+                    <div class="chart-container">
+                        <canvas id="businessSkillsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900">Education</h2>
+                <p class="mt-2 text-lg text-slate-500">My academic foundation in the music industry.</p>
+            </div>
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold text-slate-800">Bachelor of Arts (BA) in Music Business</h3>
+                <p class="text-lg text-cyan-600 font-semibold">First-Class Honours</p>
+                <p class="mt-1 text-slate-600">London Metropolitan University | London, England</p>
+                <div class="mt-6">
+                    <h4 class="font-bold text-slate-700 mb-2">Key Modules:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm">Music Marketing</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm">Music Publishing</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm">Copyright Law</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm">Licensing</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm">Artist Management</span>
+                        <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm">Entertainment Law</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="text-2xl font-bold">Let's Connect</p>
+            <p class="mt-2 text-slate-300">Open to new opportunities and collaborations.</p>
+            <div class="mt-6 flex justify-center space-x-6">
+                 <a href="mailto:andenourb@gmail.com" class="text-slate-300 hover:text-cyan-400 transition-colors">andenourb@gmail.com</a>
+                 <a href="https://www.linkedin.com/in/nour-bakoura-9b6b57217" class="text-slate-300 hover:text-cyan-400 transition-colors">LinkedIn</a>
+            </div>
+            <p class="mt-8 text-sm text-slate-400">&copy; 2025 Nour Bakoura. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive timeline details toggle
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+        // Skills data
+        const skillsData = {
+            sales: [
+                'Secondary Market Ticketing', 'Ticket Sourcing', 'Dynamic Pricing', 'Market Analysis',
+                'Sales Strategy', 'Revenue Optimization', 'Inventory Management', 'Negotiation',
+                'Supply Chain Management', 'Event Management Support'
+            ],
+            music: [
+                'Music Publishing', 'Copyright Law', 'Intellectual Property', 'Licensing',
+                'Artist Management', 'Music Marketing', 'Industry Trends', 'A&R Support'
+            ],
+            business: [
+                'Strategic Planning', 'Relationship Building', 'Problem Solving', 'Time Management',
+                'Project Management', 'Data Analysis', 'Client Relations', 'Communication', 'Adaptability'
+            ]
+        };
+
+        // Chart.js implementation
+        document.addEventListener('DOMContentLoaded', () => {
+            const chartOptions = {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                    }
+                },
+                scales: {
+                    x: {
+                        display: false,
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#334155', // slate-700
+                            font: {
+                                size: 14,
+                                weight: '500'
+                            }
+                        }
+                    }
+                }
+            };
+
+            const createChart = (canvasId, labels) => {
+                const ctx = document.getElementById(canvasId).getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Skill',
+                            data: labels.map(() => 100), // Use a uniform value for visual listing
+                            backgroundColor: '#06b6d4', // cyan-600
+                            borderColor: '#0891b2', // cyan-700
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: chartOptions
+                });
+            };
+
+            createChart('salesSkillsChart', skillsData.sales);
+            createChart('musicSkillsChart', skillsData.music);
+            createChart('businessSkillsChart', skillsData.business);
+        });
+    </script>
+
+</body>
+</html>
